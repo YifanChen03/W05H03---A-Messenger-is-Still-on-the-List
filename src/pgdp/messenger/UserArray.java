@@ -29,7 +29,7 @@ public class UserArray {
 			for (int i = 0; i < users.length; i++) {
 				if (users[i] == null) {
 					users[i] = user;
-					break;
+					return;
 				}
 			}
 
@@ -42,7 +42,7 @@ public class UserArray {
 			for (int i = 0; i < users.length; i++) {
 				if (users[i] == null) {
 					users[i] = user;
-					break;
+					return;
 				}
 			}
 		}
@@ -103,5 +103,10 @@ public class UserArray {
 
 	public void setUsers(User[] users) {
 		this.users = users;
+	}
+
+	public static void main(String args) {
+		UserArray ua = new UserArray(10);
+		System.out.println(ua);
 	}
 }
