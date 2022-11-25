@@ -125,11 +125,19 @@ public class List {
 	 */
 	public static List megaMerge(List... input) {
 		// TODO: Implementiere diese Methode
-		if (input == null) {
+		if (input == null || input.length == 0) {
 			return null;
 		}
 
-		for (int i = 0; i < input.length - 1; i++) {
+		if (input.length == 1) {
+			return input[0];
+		}
+
+		if (input.length == 2) {
+			return merge(input[0], input[1]);
+		}
+
+		for (int i = 0; i < input.length - 2; i++) {
 			input[i + 1] = merge(input[i], input[i + 1]);
 		}
 		return input[input.length];
