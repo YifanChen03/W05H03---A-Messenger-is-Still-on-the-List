@@ -60,14 +60,15 @@ public class UserArray {
 
 	// TODO: Implementiere die fehlenden Methoden!
 	public int size() {
-		int c = 0;
+		/*int c = 0;
 		//zähle Nutzer in users[]
 		for (int i = 0; i < users.length; i++) {
 			if (users[i] != null) {
 				c++;
 			}
 		}
-		return c;
+		return c;*/
+		return users.length;
 	}
 
 	//Getter und Setter
