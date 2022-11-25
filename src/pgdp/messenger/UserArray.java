@@ -20,9 +20,9 @@ public class UserArray {
 	 */
 	public void addUser(User user) {
 		//prüfen ob user schon vorhanden ist?
-		if (User_enthalten(user, users)) {
+		/*if (User_enthalten(user, users)) {
 			return;
-		}
+		}*/
 
 		// TODO: Implementiere diese Methode!
 		if (user != null) {
@@ -35,6 +35,10 @@ public class UserArray {
 
 			//Array ist voll
 			User[] n_users = new User[users.length * 2];
+			for (int i = 0; i < users.length; i++) {
+				n_users[i] = users[i];
+			}
+			users = n_users;
 			for (int i = 0; i < users.length; i++) {
 				if (users[i] == null) {
 					users[i] = user;
