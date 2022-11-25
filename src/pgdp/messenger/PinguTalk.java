@@ -68,19 +68,20 @@ public class PinguTalk {
 
     //Getter und Setter
 
-    public static long getTopicID() {
-        return topicID;
+
+    public UserArray getMembers() {
+        return members;
     }
 
-    public static void setTopicID(long topicID) {
-        PinguTalk.topicID = topicID;
+    public void setMembers(UserArray members) {
+        this.members = members;
     }
 
-    public static long getUserID() {
-        return userID;
+    public Topic[] getTopics() {
+        return topics;
     }
 
-    public static void setUserID(long userID) {
-        PinguTalk.userID = userID;
+    public void setTopics(Topic[] topics) {
+        this.topics = topics;
     }
 }
