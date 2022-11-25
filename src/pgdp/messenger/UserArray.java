@@ -56,10 +56,12 @@ public class UserArray {
 	public User deleteUser(long id) {
 		// TODO: Implementiere diese Methode!
 		for (int i = 0; i < users.length; i++) {
-			if (users[i].getId() == id) {
-				User t_user = users[i];
-				users[i] = null;
-				return t_user;
+			if (users[i] != null) {
+				if (users[i].getId() == id) {
+					User t_user = users[i];
+					users[i] = null;
+					return t_user;
+				}
 			}
 		}
 		//falls kein Nutzer mit passender ID existiert

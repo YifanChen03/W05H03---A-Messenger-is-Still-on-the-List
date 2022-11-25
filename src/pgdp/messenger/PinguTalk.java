@@ -54,22 +54,15 @@ public class PinguTalk {
     }
 
     public Topic deleteTopic(long id) {
-        /*if (topics != null) {
+        if (topics != null) {
             for (int i = 0; i < topics.length; i++) {
-                if (topics[i].getId() == id) {
-                    Topic t_topic = topics[i];
-                    topics[i] = null;
-                    return t_topic;
+                if (topics[i] != null) {
+                    if (topics[i].getId() == id) {
+                        Topic t_topic = topics[i];
+                        topics[i] = null;
+                        return t_topic;
+                    }
                 }
-            }
-        }
-        return null;*/
-
-        for (int i = 0; i < topics.length; i++) {
-            if (topics[i].getId() == id) {
-                Topic t_topic = topics[i];
-                topics[i] = null;
-                return t_topic;
             }
         }
         //falls kein Post mit passender ID existiert
