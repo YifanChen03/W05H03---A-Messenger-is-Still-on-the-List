@@ -109,6 +109,13 @@ public class List {
 	 */
 	public Message getByID(long id) {
 		// TODO: Implementiere diese Methode
+		ListElement current = head;
+		for (int i = 0; i < size; i++) {
+			if (current.getMessage().getId() == id) {
+				return current.getMessage();
+			}
+			current = current.getNext();
+		}
 		return null;
 	}
 
