@@ -5,15 +5,15 @@ public class PinguTalk {
     private static long topicID;
     private static long userID;
 
-    private UserArray users;
+    private UserArray members;
     private Topic[] topics;
 
     // TODO: Implementiere den fehlenden Konstruktor
     public PinguTalk(int initCapacity, int topicLength) {
         if (initCapacity > 0) {
-            users = new UserArray(initCapacity);
+            members = new UserArray(initCapacity);
         } else {
-            users = new UserArray(1);
+            members = new UserArray(1);
         }
 
         if (topicLength > 0) {
@@ -26,13 +26,13 @@ public class PinguTalk {
     // TODO: Implementiere die fehlenden Methoden
     public User addMember(String name, User supervisor) {
         User r_user = new User(userID, name, supervisor);
-        users.addUser(r_user);
+        members.addUser(r_user);
         userID++;
         return r_user;
     }
 
     public User deleteMember(long id) {
-        return users.deleteUser(id);
+        return members.deleteUser(id);
     }
 
     public Topic createNewTopic(String name) {
