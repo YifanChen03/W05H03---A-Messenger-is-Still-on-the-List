@@ -20,6 +20,10 @@ public class UserArray {
 	 */
 	public void addUser(User user) {
 		//prüfen ob user schon vorhanden ist?
+		if (User_enthalten(user, users)) {
+			return;
+		}
+
 		// TODO: Implementiere diese Methode!
 		if (user != null) {
 			for (int i = 0; i < users.length; i++) {
@@ -60,15 +64,23 @@ public class UserArray {
 
 	// TODO: Implementiere die fehlenden Methoden!
 	public int size() {
-		/*int c = 0;
+		int c = 0;
 		//zähle Nutzer in users[]
 		for (int i = 0; i < users.length; i++) {
 			if (users[i] != null) {
 				c++;
 			}
 		}
-		return c;*/
-		return users.length;
+		return c;
+	}
+
+	public boolean User_enthalten(User user, User[] users) {
+		for (int i = 0; i < users.length; i++) {
+			if (users[i] == user) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	//Getter und Setter
