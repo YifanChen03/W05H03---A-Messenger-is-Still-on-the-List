@@ -125,7 +125,14 @@ public class List {
 	 */
 	public static List megaMerge(List... input) {
 		// TODO: Implementiere diese Methode
-		return null;
+		if (input == null) {
+			return null;
+		}
+
+		for (int i = 0; i < input.length - 1; i++) {
+			input[i + 1] = merge(input[i], input[i + 1]);
+		}
+		return input[input.length];
 	}
 
 	/** Gibt eine neue Liste zurück, die alle Messages dieser Liste, deren Time-Stamp zwischen 'start' (inklusive)
@@ -155,5 +162,49 @@ public class List {
 	public String toString() {
 		// TODO: Implementiere diese Methode
 		return null;
+	}
+
+	public static List merge(List l1, List l2) {
+		List merged = new List();
+		ListElement m;
+		ListElement c1 = l1.head;
+		ListElement c2 = l2.head;
+		int l_length = l1.size + l2.size;
+
+		//head festlegen
+		if (c1.getMessage().getTimestamp().isBefore(c2.getMessage().getTimestamp()) ||
+				c1.getMessage().getTimestamp().isEqual(c2.getMessage().getTimestamp())) {
+			m = c1;
+			c1 = c1.getNext();
+		} else {
+			m = c2;
+			c2 = c2.getNext();
+		}
+		merged.head = m;
+
+		for (int i = 1; i < l_length; i++) {
+			if (c1 == null) {
+				m.setNext(c2);
+				c2 = c2.getNext();
+				continue;
+			}
+			if (c2 == null) {
+				m.setNext(c1);
+				c1 = c1.getNext();
+				continue;
+			}
+			if (c1.getMessage().getTimestamp().isBefore(c2.getMessage().getTimestamp()) ||
+					c1.getMessage().getTimestamp().isEqual(c2.getMessage().getTimestamp())) {
+				m.setNext(c1);
+				c1 = c1.getNext();
+			} else {
+				m.setNext(c2);
+				c2 = c2.getNext();
+			}
+		}
+		//tail festlegen
+		merged.tail = m;
+
+		return merged;
 	}
 }
