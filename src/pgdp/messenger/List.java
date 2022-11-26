@@ -184,9 +184,9 @@ public class List {
 		merged.head = m;
 
 		for (int i = 1; i < l_length; i++) {
-			if ((c1 == l1.tail || c1 == null) && (c2 == l2.tail || c2 == null)) {
+			/*if ((c1 == l1.tail || c1 == null) && (c2 == l2.tail || c2 == null)) {
 				continue;
-			}
+			}*/
 			if (c1 == l1.tail || c1 == null) {
 				m.setNext(c2);
 				c2 = c2.getNext();
@@ -207,7 +207,7 @@ public class List {
 			}
 		}
 		//tail festlegen
-		//merged.tail = m;
+		merged.tail = m;
 
 		return merged;
 	}
