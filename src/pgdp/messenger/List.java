@@ -126,14 +126,16 @@ public class List {
 	 */
 	public static List megaMerge(List... input) {
 		// TODO: Implementiere diese Methode
+		int n = 0;
 		if (input == null || input.length == 0) {
 			return new List();
 		}
 
 		for (int i = 0; i < input.length - 1; i++) {
-			input[i] = merge(input[i], input[i + 1]);
+			input[i + 1] = merge(input[i], input[i + 1]);
+			n = i;
 		}
-		return input[input.length - 1];
+		return input[n + 1];
 	}
 
 	/** Gibt eine neue Liste zurück, die alle Messages dieser Liste, deren Time-Stamp zwischen 'start' (inklusive)
