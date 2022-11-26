@@ -145,37 +145,21 @@ public class List {
 	public List filterDays(LocalDateTime start, LocalDateTime end) {
 		// TODO: Implementiere diese Methode
 		List output = new List();
-		ListElement current_out = null;
-		ListElement current_or = head;
+		ListElement current = head;
 		//falls eines der beiden Parameter null oder end liegt vor start
 		if (start == null || end == null || end.isBefore(start)) {
 			return null;
 		}
 
-		//erstes listenelemnt für current_out finden
-		while (current_out == null) {
-			if ((current_or.getMessage().getTimestamp().isAfter(start) ||
-					current_or.getMessage().getTimestamp().isEqual(start))
-					&& current_or.getMessage().getTimestamp().isBefore(end)) {
-				current_out = current_or;
-				current_or = current_or.getNext();
-
-				//für erstes Mal
-				output.head = current_out;
-			}
-		}
-
 		//alle anderen listenelemnte hinzufügen
-		while (current_or != null) {
-			if ((current_or.getMessage().getTimestamp().isAfter(start) ||
-					current_or.getMessage().getTimestamp().isEqual(start))
-					&& current_or.getMessage().getTimestamp().isBefore(end)) {
-				current_out.setNext(current_or);
-				current_out = current_or;
-				current_or = current_or.getNext();
+		while (current != null) {
+			if ((current.getMessage().getTimestamp().isAfter(start) ||
+					current.getMessage().getTimestamp().isEqual(start))
+					&& current.getMessage().getTimestamp().isBefore(end)) {
+				output.add(current.getMessage());
+				current = current.getNext();
 			}
 		}
-		output.tail = current_out;
 		return output;
 	}
 
