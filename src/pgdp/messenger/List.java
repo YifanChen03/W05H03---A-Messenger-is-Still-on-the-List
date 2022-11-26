@@ -154,9 +154,9 @@ public class List {
 
 		//erstes listenelemnt für current_out finden
 		while (current_out == null) {
-			if ((current_or.getMessage().getTimestamp().isAfter(start) ||  current_or.getMessage().getTimestamp().isEqual(start))
+			if ((current_or.getMessage().getTimestamp().isAfter(start) ||
+					current_or.getMessage().getTimestamp().isEqual(start))
 					&& current_or.getMessage().getTimestamp().isBefore(end)) {
-				current_out.setNext(current_or);
 				current_out = current_or;
 				current_or = current_or.getNext();
 
@@ -166,8 +166,9 @@ public class List {
 		}
 
 		//alle anderen listenelemnte hinzufügen
-		while (current_out != null) {
-			if ((current_or.getMessage().getTimestamp().isAfter(start) ||  current_or.getMessage().getTimestamp().isEqual(start))
+		while (current_out != tail) {
+			if ((current_or.getMessage().getTimestamp().isAfter(start) ||
+					current_or.getMessage().getTimestamp().isEqual(start))
 					&& current_or.getMessage().getTimestamp().isBefore(end)) {
 				current_out.setNext(current_or);
 				current_out = current_or;
