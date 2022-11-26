@@ -184,16 +184,16 @@ public class List {
 		merged.head = m;
 
 		for (int i = 0; i < l_length - 1; i++) {
-			if ((c1 == l1.tail || c1 == null) && (c2 == l2.tail || c2 == null)) {
+			if (c1 == null && c2 == null) {
 				continue;
 			}
-			if (c1 == l1.tail || c1 == null) {
+			if (c1 == null) {
 				m.setNext(c2);
 				m = c2;
 				c2 = c2.getNext();
 				continue;
 			}
-			if (c2 == l2.tail || c2 == null) {
+			if (c2 == null) {
 				m.setNext(c1);
 				m = c1;
 				c1 = c1.getNext();
