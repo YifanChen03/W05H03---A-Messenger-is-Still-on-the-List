@@ -153,7 +153,7 @@ public class List {
 			return null;
 		}
 
-		while (current_out != tail) {
+		while (current_out != null) {
 			if ((current_or.getMessage().getTimestamp().isAfter(start) ||  current_or.getMessage().getTimestamp().isEqual(start))
 					&& current_or.getMessage().getTimestamp().isBefore(end)) {
 				current_out.setNext(current_or);
