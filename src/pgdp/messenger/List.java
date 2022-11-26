@@ -127,7 +127,7 @@ public class List {
 	public static List megaMerge(List... input) {
 		// TODO: Implementiere diese Methode
 		if (input == null || input.length == 0) {
-			return null;
+			return new List();
 		}
 
 		for (int i = 0; i < input.length - 1; i++) {
@@ -148,7 +148,7 @@ public class List {
 		ListElement current = head;
 		//falls eines der beiden Parameter null oder end liegt vor start
 		if (start == null || end == null || end.isBefore(start)) {
-			return null;
+			return new List();
 		}
 
 		//alle anderen listenelemnte hinzufügen
@@ -171,6 +171,10 @@ public class List {
 		// TODO: Implementiere diese Methode
 		List output = new List();
 		ListElement current = head;
+
+		if (user == null) {
+			return new List();
+		}
 
 		while (current != null) {
 			if (current.getMessage().getAuthor() == user) {
