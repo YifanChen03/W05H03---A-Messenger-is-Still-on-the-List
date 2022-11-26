@@ -157,8 +157,8 @@ public class List {
 					current.getMessage().getTimestamp().isEqual(start))
 					&& current.getMessage().getTimestamp().isBefore(end)) {
 				output.add(current.getMessage());
-				current = current.getNext();
 			}
+			current = current.getNext();
 		}
 		return output;
 	}
@@ -170,11 +170,13 @@ public class List {
 	public List filterUser(User user) {
 		// TODO: Implementiere diese Methode
 		List output = new List();
-		ListElement current_out = null;
-		ListElement current_or = head;
+		ListElement current = head;
 
-		while (current_or != null) {
-			current_or = null;
+		while (current != null) {
+			if (current.getMessage().getAuthor() == user) {
+				output.add(current.getMessage());
+			}
+			current = current.getNext();
 		}
 		return null;
 	}
