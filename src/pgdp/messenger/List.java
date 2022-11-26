@@ -166,7 +166,7 @@ public class List {
 		}
 
 		//alle anderen listenelemnte hinzufügen
-		while (current_out != tail) {
+		while (current_out != null) {
 			if ((current_or.getMessage().getTimestamp().isAfter(start) ||
 					current_or.getMessage().getTimestamp().isEqual(start))
 					&& current_or.getMessage().getTimestamp().isBefore(end)) {
