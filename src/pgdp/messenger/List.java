@@ -129,7 +129,6 @@ public class List {
 			return null;
 		}
 
-		//merge funktioniert nicht richtig
 		for (int i = 0; i < input.length - 1; i++) {
 			input[i] = merge(input[i], input[i + 1]);
 		}
@@ -163,7 +162,7 @@ public class List {
 	public String toString() {
 		// TODO: Implementiere diese Methode
 		String output = "";
-		ListElement current = this.head;
+		ListElement current = head;
 		int i = 0;
 
 		while (current != tail) {
@@ -184,7 +183,6 @@ public class List {
 		ListElement m;
 		ListElement c1 = l1.head;
 		ListElement c2 = l2.head;
-		int l_length = l1.size + l2.size;
 
 		//head festlegen
 		if (c1.getMessage().getTimestamp().isBefore(c2.getMessage().getTimestamp()) ||
