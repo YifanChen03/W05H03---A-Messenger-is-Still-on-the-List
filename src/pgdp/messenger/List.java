@@ -137,7 +137,7 @@ public class List {
 			return merge(input[0], input[1]);
 		}
 
-		for (int i = 0; i < input.length - 2; i++) {
+		for (int i = 0; i < input.length - 1; i++) {
 			input[i + 1] = merge(input[i], input[i + 1]);
 		}
 		return input[input.length];
