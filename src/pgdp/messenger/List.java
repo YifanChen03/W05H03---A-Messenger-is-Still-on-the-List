@@ -164,7 +164,7 @@ public class List {
 		// TODO: Implementiere diese Methode
 		String output = "";
 		ListElement current = this.head;
-		for (int i = 0; i < this.size; i++) {
+		for (int i = 0; i < this.size - 1; i++) {
 			//einmal am Anfang
 			if (i == 0) {
 				output = current.getMessage().toString();
