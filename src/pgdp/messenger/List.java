@@ -129,25 +129,7 @@ public class List {
 			return null;
 		}
 
-		/*if (input.length == 1) {
-			return input[0];
-		}
-
-		if (input.length == 2) {
-			return merge(input[0], input[1]);
-		}*/
-		if (input.length == 3) {
-			return merge(merge(input[0], input[1]), input[2]);
-		}
-
-		if (input.length == 4) {
-			return merge(merge(merge(input[0], input[1]), input[2]), input[3]);
-		}
-
-		if (input.length == 5) {
-			return merge(merge(merge(merge(input[0], input[1]), input[2]), input[3]), input[4]);
-		}
-
+		//merge funktioniert nicht richtig
 		for (int i = 0; i < input.length - 1; i++) {
 			input[i] = merge(input[i], input[i + 1]);
 		}
@@ -202,12 +184,12 @@ public class List {
 		merged.head = m;
 
 		for (int i = 1; i < l_length; i++) {
-			if (c1 == null) {
+			if (c1 == l1.tail) {
 				m.setNext(c2);
 				c2 = c2.getNext();
 				continue;
 			}
-			if (c2 == null) {
+			if (c2 == l2.tail) {
 				m.setNext(c1);
 				c1 = c1.getNext();
 				continue;
