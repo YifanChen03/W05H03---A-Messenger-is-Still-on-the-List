@@ -204,7 +204,7 @@ public class List {
 		ListElement c2 = l2.head;
 
 		while (c1 != null || c2 != null) {
-			/*if (c1 == null) {
+			if (c1 == null) {
 				merged.add(c2.getMessage());
 				c2 = c2.getNext();
 				continue;
@@ -213,7 +213,7 @@ public class List {
 				merged.add(c1.getMessage());
 				c1 = c1.getNext();
 				continue;
-			}*/
+			}
 			if (c1.getMessage().getTimestamp().isBefore(c2.getMessage().getTimestamp()) ||
 					c1.getMessage().getTimestamp().isEqual(c2.getMessage().getTimestamp())) {
 				merged.add(c1.getMessage());
