@@ -200,12 +200,12 @@ public class List {
 
 	public static List merge(List l1, List l2) {
 		List merged = new List();
-		ListElement m;
+		//ListElement m;
 		ListElement c1 = l1.head;
 		ListElement c2 = l2.head;
 
 		//head festlegen
-		if (c1.getMessage().getTimestamp().isBefore(c2.getMessage().getTimestamp()) ||
+		/*if (c1.getMessage().getTimestamp().isBefore(c2.getMessage().getTimestamp()) ||
 				c1.getMessage().getTimestamp().isEqual(c2.getMessage().getTimestamp())) {
 			m = c1;
 			c1 = c1.getNext();
@@ -240,7 +240,28 @@ public class List {
 			}
 		}
 		//tail festlegen
-		merged.tail = m;
+		merged.tail = m;*/
+
+		while (c1 != null || c2 != null) {
+			if (c1 == null) {
+				merged.add(c2.getMessage());
+				c2 = c2.getNext();
+				continue;
+			}
+			if (c2 == null) {
+				merged.add(c1.getMessage());
+				c1 = c1.getNext();
+				continue;
+			}
+			if (c1.getMessage().getTimestamp().isBefore(c2.getMessage().getTimestamp()) ||
+					c1.getMessage().getTimestamp().isEqual(c2.getMessage().getTimestamp())) {
+				c1 = c1.getNext();
+				merged.add(c1.getMessage());
+			} else {
+				merged.add(c2.getMessage());
+				c2 = c2.getNext();
+			}
+		}
 
 		return merged;
 	}
