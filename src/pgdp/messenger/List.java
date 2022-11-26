@@ -131,6 +131,11 @@ public class List {
 			return new List();
 		}
 
+		//falls input nur eine Liste beinhaltet
+		if (input.length == 1) {
+			return input[0];
+		}
+
 		for (int i = 0; i < input.length - 1; i++) {
 			input[i + 1] = merge(input[i], input[i + 1]);
 			n = i;
