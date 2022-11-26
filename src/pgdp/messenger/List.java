@@ -193,6 +193,7 @@ public class List {
 
 		while (current != null) {
 			output = output + current.getMessage().toString() + "\n";
+			current = current.getNext();
 		}
 		return output;
 	}
