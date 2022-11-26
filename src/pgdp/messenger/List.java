@@ -144,7 +144,31 @@ public class List {
 	 */
 	public List filterDays(LocalDateTime start, LocalDateTime end) {
 		// TODO: Implementiere diese Methode
-		return null;
+		List output = new List();
+		ListElement current_out = null;
+		ListElement current_or = head;
+		int i = 0;
+		//falls eines der beiden Parameter null oder end liegt vor start
+		if (start == null || end == null || end.isBefore(start)) {
+			return null;
+		}
+
+		while (current_out != tail) {
+			if ((current_or.getMessage().getTimestamp().isAfter(start) ||  current_or.getMessage().getTimestamp().isEqual(start))
+					&& current_or.getMessage().getTimestamp().isBefore(end)) {
+				current_out.setNext(current_or);
+				current_out = current_or;
+				current_or = current_or.getNext();
+
+				//für erstes Mal
+				if (i == 0) {
+					output.head = current_out;
+					i = 1;
+				}
+			}
+		}
+		output.tail = current_out;
+		return output;
 	}
 
 	/** Gibt eine neue Liste zurück, die alle Messages dieser Liste, deren Nutzer gleich 'user' ist, enthält.
