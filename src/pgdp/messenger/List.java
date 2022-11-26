@@ -255,8 +255,8 @@ public class List {
 			}
 			if (c1.getMessage().getTimestamp().isBefore(c2.getMessage().getTimestamp()) ||
 					c1.getMessage().getTimestamp().isEqual(c2.getMessage().getTimestamp())) {
-				c1 = c1.getNext();
 				merged.add(c1.getMessage());
+				c1 = c1.getNext();
 			} else {
 				merged.add(c2.getMessage());
 				c2 = c2.getNext();
