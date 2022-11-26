@@ -110,7 +110,8 @@ public class List {
 	public Message getByID(long id) {
 		// TODO: Implementiere diese Methode
 		ListElement current = head;
-		for (int i = 0; i < size; i++) {
+
+		while (current != tail) {
 			if (current.getMessage().getId() == id) {
 				return current.getMessage();
 			}
@@ -169,11 +170,11 @@ public class List {
 			//einmal am Anfang
 			if (i == 0) {
 				output = current.getMessage().toString();
+				i = 1;
 			} else {
 				output = output + "\n" + current.getMessage().toString();
 			}
 			current = current.getNext();
-			i++;
 		}
 		return output;
 	}
