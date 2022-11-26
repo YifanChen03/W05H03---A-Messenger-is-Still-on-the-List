@@ -164,7 +164,9 @@ public class List {
 		// TODO: Implementiere diese Methode
 		String output = "";
 		ListElement current = this.head;
-		for (int i = 0; i < this.size - 1; i++) {
+		int i = 0;
+
+		while (current != tail) {
 			//einmal am Anfang
 			if (i == 0) {
 				output = current.getMessage().toString();
@@ -172,6 +174,7 @@ public class List {
 				output = output + "\n" + current.getMessage().toString();
 			}
 			current = current.getNext();
+			i++;
 		}
 		return output;
 	}
