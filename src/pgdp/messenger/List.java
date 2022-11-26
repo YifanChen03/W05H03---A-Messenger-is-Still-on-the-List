@@ -184,6 +184,9 @@ public class List {
 		merged.head = m;
 
 		for (int i = 1; i < l_length; i++) {
+			if (c1 == l1.tail && c2 == l2.tail) {
+				continue;
+			}
 			if (c1 == l1.tail || c1 == null) {
 				m.setNext(c2);
 				c2 = c2.getNext();
