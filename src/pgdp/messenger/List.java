@@ -192,14 +192,7 @@ public class List {
 		int i = 0;
 
 		while (current != null) {
-			//einmal am Anfang
-			if (i == 0) {
-				output = current.getMessage().toString();
-				i = 1;
-			} else {
-				output = output + "\n" + current.getMessage().toString();
-			}
-			current = current.getNext();
+			output = output + current.getMessage().toString() + "\n";
 		}
 		return output;
 	}
