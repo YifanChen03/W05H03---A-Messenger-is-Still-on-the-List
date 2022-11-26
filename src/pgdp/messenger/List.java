@@ -157,7 +157,7 @@ public class List {
 			if ((current_or.getMessage().getTimestamp().isAfter(start) ||
 					current_or.getMessage().getTimestamp().isEqual(start))
 					&& current_or.getMessage().getTimestamp().isBefore(end)) {
-				current_out = current_or.getMessage();
+				current_out = current_or;
 				current_or = current_or.getNext();
 
 				//für erstes Mal
@@ -190,7 +190,7 @@ public class List {
 		ListElement current_or = head;
 
 		while (current_or != null) {
-			if ()
+			current_or = null;
 		}
 		return null;
 	}
