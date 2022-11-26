@@ -183,7 +183,7 @@ public class List {
 		}
 		merged.head = m;
 
-		for (int i = 1; i < l_length - 1; i++) {
+		for (int i = 0; i < l_length - 1; i++) {
 			/*if ((c1 == l1.tail || c1 == null) && (c2 == l2.tail || c2 == null)) {
 				continue;
 			}*/
