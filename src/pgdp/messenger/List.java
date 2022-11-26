@@ -162,7 +162,13 @@ public class List {
 	 */
 	public String toString() {
 		// TODO: Implementiere diese Methode
-		return null;
+		String output = "";
+		ListElement current = this.head;
+		for (int i = 0; i < this.size; i++) {
+			output = output + "\n" + current.getMessage().toString();
+			current = current.getNext();
+		}
+		return output;
 	}
 
 	public static List merge(List l1, List l2) {
