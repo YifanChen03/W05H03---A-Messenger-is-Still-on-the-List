@@ -211,7 +211,7 @@ public class List {
 			}
 		}
 		//tail festlegen
-		merged.tail = m;
+		//merged.tail = m;
 
 		return merged;
 	}
