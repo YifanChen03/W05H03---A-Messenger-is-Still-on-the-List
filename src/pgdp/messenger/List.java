@@ -140,6 +140,10 @@ public class List {
 			return merge(merge(input[0], input[1]), input[2]);
 		}
 
+		if (input.length == 4) {
+			return merge(merge(merge(input[0], input[1]), input[2]), input[3]);
+		}
+
 		for (int i = 0; i < input.length - 1; i++) {
 			input[i] = merge(input[i], input[i + 1]);
 		}
