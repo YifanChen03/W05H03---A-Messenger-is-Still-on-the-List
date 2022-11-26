@@ -111,7 +111,7 @@ public class List {
 		// TODO: Implementiere diese Methode
 		ListElement current = head;
 
-		while (current != tail) {
+		while (current != null) {
 			if (current.getMessage().getId() == id) {
 				return current.getMessage();
 			}
