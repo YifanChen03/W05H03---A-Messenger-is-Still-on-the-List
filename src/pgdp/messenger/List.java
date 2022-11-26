@@ -178,7 +178,7 @@ public class List {
 			}
 			current = current.getNext();
 		}
-		return null;
+		return output;
 	}
 
 	/** Gibt eine String-Repräsentation dieser Liste zurück. Dabei werden die String-Repräsentationen der einzelnen
