@@ -157,7 +157,7 @@ public class List {
 			if ((current_or.getMessage().getTimestamp().isAfter(start) ||
 					current_or.getMessage().getTimestamp().isEqual(start))
 					&& current_or.getMessage().getTimestamp().isBefore(end)) {
-				current_out = current_or;
+				current_out = current_or.getMessage();
 				current_or = current_or.getNext();
 
 				//für erstes Mal
@@ -185,6 +185,13 @@ public class List {
 	 */
 	public List filterUser(User user) {
 		// TODO: Implementiere diese Methode
+		List output = new List();
+		ListElement current_out = null;
+		ListElement current_or = head;
+
+		while (current_or != null) {
+			if ()
+		}
 		return null;
 	}
 
@@ -198,7 +205,7 @@ public class List {
 		ListElement current = head;
 		int i = 0;
 
-		while (current != tail) {
+		while (current != null) {
 			//einmal am Anfang
 			if (i == 0) {
 				output = current.getMessage().toString();
