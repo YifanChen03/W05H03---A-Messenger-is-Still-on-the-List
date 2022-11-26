@@ -197,10 +197,7 @@ public class List {
 		}
 		merged.head = m;
 
-		for (int i = 0; i < l_length - 1; i++) {
-			if (c1 == null && c2 == null) {
-				continue;
-			}
+		while (c1 != null || c2 != null) {
 			if (c1 == null) {
 				m.setNext(c2);
 				m = c2;
